@@ -1,0 +1,7 @@
+<ul class="menu-list">
+    {{#foreach navigation}}
+        <li class="nav-{{slug}}">
+            <a href="{{url absolute="true"}}" class="{{#if current}} is-active{{/if}}">{{label}}</a>
+        </li>
+    {{/foreach}}
+</ul>
