@@ -3,7 +3,6 @@ body {
 }
 
 .site-nav {
-    background: white;
 }
 
 .site-nav .site-title {
@@ -21,4 +20,24 @@ body {
 .site-nav .site-aside {
     padding-top: 16px;
     padding-bottom: 16px;
+    background: white;
+}
+
+.site-nav .site-user {
+    background: white;
+    margin: 16px 0;
+    padding: 32px 16px;
+}
+
+.site-nav .site-user .author-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222222;
+    margin: 8px 0 4px 0;
+}
+
+.site-nav .site-user .author-bio {
+    font-size: 13px;
+    font-weight: normal;
+    color: #555555;
 }
