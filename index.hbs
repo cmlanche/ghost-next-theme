@@ -3,22 +3,25 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="columns">
+<main id="site-main" class="container">
 
-    {{!-- 左侧导航栏 --}}
-    <div class="column">
-        {{> "site-nav"}}
-    </div>
+    <div class="columns">
+        {{!-- 左侧导航栏 --}}
+        <div class="column is-one-quarter">
+            {{> "site-nav"}}
+        </div>
 
-    {{!-- 右侧主题栏 --}}
-    <div class="column">
-        <div class="post-list">
-        
-            {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
+        {{!-- 右侧主题栏 --}}
+        <div class="column">
+            <div class="post-list">
+            
+                {{#foreach posts}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
 
-            {{/foreach}}
+                {{/foreach}}
+            </div>
         </div>
     </div>
+    
 </main>

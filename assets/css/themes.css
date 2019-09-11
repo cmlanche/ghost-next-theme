@@ -1,0 +1,24 @@
+body {
+    background: #f5f7f9;
+}
+
+.site-nav {
+    background: white;
+}
+
+.site-nav .site-title {
+    text-align: center;
+    background: #222222;
+    color: white;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.site-nav .site-title .title {
+    color: white;
+}
+
+.site-nav .site-aside {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
