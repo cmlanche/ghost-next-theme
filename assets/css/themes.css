@@ -113,3 +113,16 @@ body {
 .author-card .author-card-content {
     margin-left: 16px;
 }
+
+/* 标签页 */
+.tag-page .site-header-content {
+    margin: 16px auto;
+    background-color: white;
+    padding: 16px;
+}
+
+.tag-page .site-header-content .site-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #555555;
+}
