@@ -126,3 +126,9 @@ body {
     font-size: 18px;
     color: #555555;
 }
+
+.footer {
+    background: transparent;
+    color: #999999;
+    font-size: 13px;
+}
