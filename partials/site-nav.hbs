@@ -12,108 +12,109 @@
         </aside>
     </div>
 
-    {{#is "index"}}
-    <div class="site-user has-text-centered">
-        {{#if @site.logo}}
-        <figure class="image is-128x128 is-inline-block">
-              <img  src="{{@site.logo}}" 
-                alt="{{@site.title}}">
-        </figure>
-        {{else}}
-        <span>请在<a href="/ghost">后台</a>设置网站logo</span>
-        {{/if}}
-    </div>
-    {{/is}}
-
-    {{!-- 用户信息 --}}
-    {{#is "post, page"}}
-    {{#primary_author}}
-    <div class="site-user has-text-centered">
-        <figure class="image is-128x128 is-inline-block">
-              <img  src="{{#if profile_image}}{{img_url profile_image size="xs"}}{{else}}https://bulma.io/images/placeholders/128x128.png{{/if}}" 
-                alt="{{name}}">
-        </figure>
-        <div class="author-name">
-            <span>{{name}}</span>
-        </div>
-        <div class="author-bio">
-            <span>{{bio}}</span>
-        </div>
-    </div>
-    {{/primary_author}}
-    {{/is}}
-    
-
-    {{!-- 工具栏 --}}
-    <div class="site-tools has-text-centered">
-
+    <div id="sticky-part">
         {{#is "index"}}
-            {{#if @site.twitter}}
-                <a href="{{@site.twitter}}">
-                    <span class="icon has-text-info is-large">
-                        <i class="fab fa-twitter fa-lg"></i>
-                    </span> 
-                </a>
+        <div class="site-user has-text-centered">
+            {{#if @site.logo}}
+            <figure class="image is-128x128 is-inline-block">
+                <img  src="{{@site.logo}}" 
+                    alt="{{@site.title}}">
+            </figure>
+            {{else}}
+            <span>请在<a href="/ghost">后台</a>设置网站logo</span>
             {{/if}}
-
-            {{#if @site.facebook}}
-                <span class="icon has-text-link is-large">
-                    <i class="fab fa-facebook fa-lg"></i>
-                </span>
-            {{/if}}
+        </div>
         {{/is}}
 
+        {{!-- 用户信息 --}}
         {{#is "post, page"}}
-            {{#primary_author}}
-                {{!-- 作者个人网站 --}}
-                {{#if website}}
-                    <a href="{{website}}">
-                        <span class="icon is-large">
-                            <i class="fas fa-blog fa-lg"></i>
-                        </span>
-                    </a>
-                {{/if}}
+        {{#primary_author}}
+        <div class="site-user has-text-centered">
+            <figure class="image is-128x128 is-inline-block">
+                <img  src="{{#if profile_image}}{{img_url profile_image size="xs"}}{{else}}https://bulma.io/images/placeholders/128x128.png{{/if}}" 
+                    alt="{{name}}">
+            </figure>
+            <div class="author-name">
+                <span>{{name}}</span>
+            </div>
+            <div class="author-bio">
+                <span>{{bio}}</span>
+            </div>
+        </div>
+        {{/primary_author}}
+        {{/is}}
+        
 
-                {{!-- 作者的推特 --}}
-                {{#if twitter}}
-                    <a href="{{twitter}}">
+        {{!-- 工具栏 --}}
+        <div class="site-tools has-text-centered">
+            {{#is "index"}}
+                {{#if @site.twitter}}
+                    <a href="{{@site.twitter}}">
                         <span class="icon has-text-info is-large">
                             <i class="fab fa-twitter fa-lg"></i>
                         </span> 
                     </a>
                 {{/if}}
 
-                {{!-- 作者的Facebook --}}
-                {{#if facebook}}
-                    <a href="{{facebook}}">
-                        <span class="icon has-text-link is-large">
-                            <i class="fab fa-facebook fa-lg"></i>
-                        </span>
-                    </a>
+                {{#if @site.facebook}}
+                    <span class="icon has-text-link is-large">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </span>
                 {{/if}}
-            
-                {{!-- 作者的微信 --}}
-                <div class="dropdown is-hoverable is-up">
-                    <div class="dropdown-trigger">
-                        <span class="icon has-text-success is-large" 
-                            aria-haspopup="true" aria-controls="weixin-dropdown">
-                            <i class="fab fa-weixin fa-lg"></i>
-                        </span>
-                    </div>
-                    <div class="dropdown-menu" id="weixin-dropdown" role="menu">
-                        <div class="dropdown-content">
+            {{/is}}
+
+            {{#is "post, page"}}
+                {{#primary_author}}
+                    {{!-- 作者个人网站 --}}
+                    {{#if website}}
+                        <a href="{{website}}">
+                            <span class="icon is-large">
+                                <i class="fas fa-blog fa-lg"></i>
+                            </span>
+                        </a>
+                    {{/if}}
+
+                    {{!-- 作者的推特 --}}
+                    {{#if twitter}}
+                        <a href="{{twitter}}">
+                            <span class="icon has-text-info is-large">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </span> 
+                        </a>
+                    {{/if}}
+
+                    {{!-- 作者的Facebook --}}
+                    {{#if facebook}}
+                        <a href="{{facebook}}">
+                            <span class="icon has-text-link is-large">
+                                <i class="fab fa-facebook fa-lg"></i>
+                            </span>
+                        </a>
+                    {{/if}}
+                
+                    {{!-- 作者的微信 --}}
+                    <div class="dropdown is-hoverable is-up">
+                        <div class="dropdown-trigger">
+                            <span class="icon has-text-success is-large" 
+                                aria-haspopup="true" aria-controls="weixin-dropdown">
+                                <i class="fab fa-weixin fa-lg"></i>
+                            </span>
+                        </div>
+                        <div class="dropdown-menu" id="weixin-dropdown" role="menu">
+                            <div class="dropdown-content">
+                            </div>
                         </div>
                     </div>
-                </div>
-            
-                {{!-- 作者的微博 --}}
-                <a href="#" id="weibo">
-                    <span class="icon has-text-danger is-large">
-                        <i class="fab fa-weibo fa-lg"></i>
-                    </span>
-                </a>
-            {{/primary_author}}
-        {{/is}}
+                
+                    {{!-- 作者的微博 --}}
+                    <a href="#" id="weibo">
+                        <span class="icon has-text-danger is-large">
+                            <i class="fab fa-weibo fa-lg"></i>
+                        </span>
+                    </a>
+                {{/primary_author}}
+            {{/is}}
+        </div>
     </div>
 </div>
 
@@ -125,6 +126,8 @@
 //   Dropping the scroll event and using only a raf loop results in smoother
 //   scrolling but continuous processing even when not scrolling
 $(document).ready(function () {
+
+    $("#sticky-part").sticky({topSpacing:0})
 
     var weixin = document.querySelector("#weixin-dropdown .dropdown-content");
     weixin.innerHTML = "<figure class='image'><image src=" + theme.cmlanche.weixin + "></figure>";

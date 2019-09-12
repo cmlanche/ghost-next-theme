@@ -82,3 +82,17 @@ body {
 .post-card .post-card-content .button {
     margin-top: 48px;
 }
+
+/* 文章页面 */
+.post {
+    padding: 48px 0;
+    background: white;
+}
+
+.post .title {
+    margin-bottom: .75rem;
+}
+
+.post .post-full-meta {
+    margin-bottom: 1.5rem;
+}

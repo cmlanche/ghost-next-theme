@@ -1,7 +1,22 @@
 {{!< default}}
 
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
+{{#contentFor "styles"}}
+<link rel="stylesheet" type="text/css" href="{{asset "built/github.markdown.css"}}"/>
+<style>
+    .markdown-body {
+		box-sizing: border-box;
+		min-width: 200px;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 767px) {
+		.markdown-body {
+			padding: 15px;
+		}
+	}
+</style>
+{{/contentFor}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
@@ -20,14 +35,14 @@ into the {body} of the default.hbs template --}}
             <div class="post">
                 <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-                    <header class="post-full-header">
+                    <header class="post-full-header has-text-centered">
+                        <h1 class="title">{{title}}</h1>
                         <section class="post-full-meta">
                             <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
                             {{#primary_tag}}
                                 <span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
                             {{/primary_tag}}
                         </section>
-                        <h1 class="post-full-title">{{title}}</h1>
                     </header>
 
                     {{#if feature_image}}
@@ -39,9 +54,6 @@ into the {body} of the default.hbs template --}}
                                     {{img_url feature_image size="m"}} 600w,
                                     {{img_url feature_image size="l"}} 1000w,
                                     {{img_url feature_image size="xl"}} 2000w"
-                            sizes="(max-width: 800px) 400px,
-                                    (max-width: 1170px) 700px,
-                                    1400px"
                             src="{{img_url feature_image size="xl"}}"
                             alt="{{title}}"
                         />
@@ -49,7 +61,7 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
 
                     <section class="post-full-content">
-                        <div class="post-content">
+                        <div class="post-content markdown-body">
                             {{content}}
                         </div>
                     </section>
@@ -95,12 +107,7 @@ into the {body} of the default.hbs template --}}
                         {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                             {{#if related_posts}}
                             <article class="read-next-card"
-                                {{#if ../primary_tag.feature_image}}
-                                    style="background-image: url({{img_url ../primary_tag.feature_image size="m"}})"
-                                {{else}}
-                                    {{#if @site.cover_image}}
-                                        style="background-image: url({{img_url @site.cover_image size="m"}})"{{/if}}
-                                {{/if}}
+                                
                             >
                                 <header class="read-next-card-header">
                                     <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
@@ -108,7 +115,7 @@ into the {body} of the default.hbs template --}}
                                     <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
                                     {{/../primary_tag}}
                                 </header>
-                                <div class="read-next-divider">{{> "icons/infinity"}}</div>
+                                <div class="read-next-divider"></div>
                                 <div class="read-next-card-content">
                                     <ul>
                                         {{#foreach related_posts}}
@@ -153,7 +160,6 @@ into the {body} of the default.hbs template --}}
 //   Dropping the scroll event and using only a raf loop results in smoother
 //   scrolling but continuous processing even when not scrolling
 $(document).ready(function () {
-
 });
 </script>
 {{/contentFor}}

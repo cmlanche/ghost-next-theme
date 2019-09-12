@@ -19,6 +19,8 @@
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
+    {{{block "styles"}}}
+
 </head>
 <body class="{{body_class}}">
 
@@ -76,6 +78,7 @@
         crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "built/jquery.sticky.js"}}"></script>
 
     <script src="{{asset "built/infinitescroll.js"}}"></script>
 
