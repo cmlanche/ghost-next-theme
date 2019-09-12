@@ -50,12 +50,14 @@ body {
 }
 
 .post-card {
-    padding: 72px 48px;
+    
 }
 
-.post-card .post-meta {
+.post .post-meta {
     margin-top: 12px;
     margin-bottom: 30px;
+    font-size: .75rem;
+    color: #a1a1a1;
 }
 
 .post-card .post-meta .icon{
@@ -66,6 +68,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 8px;
+    color:#555555;
 }
 
 .post-card .author-list {
@@ -85,14 +88,20 @@ body {
 
 /* 文章页面 */
 .post {
-    padding: 48px 0;
+    padding: 72px 48px;
     background: white;
 }
 
 .post .title {
     margin-bottom: .75rem;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .post .post-full-meta {
     margin-bottom: 1.5rem;
+}
+
+.post .post-full .title{
+    color: #555555;
 }

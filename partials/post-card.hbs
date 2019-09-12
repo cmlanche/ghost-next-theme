@@ -6,10 +6,17 @@
         </a>
         
         <p class="post-meta">
+            {{!-- 写作时间 --}}
+            <span class="icon">
+              <i class="fas fa-calendar-day"></i>
+            </span>
+            <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY年MM月D日 "}}</time>
+            {{!-- 阅读需要的时间 --}}
             <span class="icon">
               <i class="far fa-clock"></i>
             </span>
             <span>{{reading_time}}</span>
+            {{!-- 标签 --}}
             {{#if primary_tag}}
                 <span class="icon">
                     <i class="fas fa-tags"></i>
