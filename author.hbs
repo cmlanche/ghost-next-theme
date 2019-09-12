@@ -1,56 +1,91 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{#author}}
 {{!-- Everything inside the #author tags pulls data from the author --}}
 
+<div class="tag-page container">
+    <div class="columns">
+        <div class="column is-one-quarter">
+            {{> "site-nav"}}
+        </div>
 
-{{> header background=cover_image}} {{!--Special header.hbs partial to generate the <header> tag--}}
-    <div class="inner">
-        {{> "site-nav"}}
-        <div class="site-header-content">
-            {{#if profile_image}}
-                <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-            {{/if}}
-            <h1 class="site-title">{{name}}</h1>
-            {{#if bio}}
-                <h2 class="author-bio">{{bio}}</h2>
-            {{/if}}
-            <div class="author-meta">
-                {{#if location}}
-                    <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
+        <div class="column">
+            {{#author}}
+            <div class="site-header-content has-text-centered">
+                {{#if profile_image}}
+                    <figure class="image is-128x128 is-inline-block">
+                        <img class="is-rounded author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                    </figure>
                 {{/if}}
-                <div class="author-stats">
-                    {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <span class="bull">&bull;</span>
+                <h1 class="site-title">{{name}}</h1>
+                {{#if bio}}
+                    <h2 class="author-bio">{{bio}}</h2>
+                {{/if}}
+                <div class="author-meta">
+                    {{#if location}}
+                        <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
+                    {{/if}}
+                    <div class="author-stats">
+                        {{plural ../pagination.total empty='暂无文章' singular='% 篇文章' plural='% 篇文章'}} <span class="bull">&bull;</span>
+                    </div>
+                    
+                    {{!-- 作者个人网站 --}}
+                    {{#if website}}
+                        <a href="{{website}}">
+                            <span class="icon is-large">
+                                <i class="fas fa-blog fa-lg"></i>
+                            </span>
+                        </a>
+                    {{/if}}
+
+                    {{!-- 作者的推特 --}}
+                    {{#if twitter}}
+                        <a href="{{twitter}}">
+                            <span class="icon has-text-info is-large">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </span> 
+                        </a>
+                    {{/if}}
+
+                    {{!-- 作者的Facebook --}}
+                    {{#if facebook}}
+                        <a href="{{facebook}}">
+                            <span class="icon has-text-link is-large">
+                                <i class="fab fa-facebook fa-lg"></i>
+                            </span>
+                        </a>
+                    {{/if}}
+                
+                    {{!-- 作者的微信 --}}
+                    <div class="dropdown is-hoverable is-up">
+                        <div class="dropdown-trigger">
+                            <span class="icon has-text-success is-large" 
+                                aria-haspopup="true" aria-controls="weixin-dropdown">
+                                <i class="fab fa-weixin fa-lg"></i>
+                            </span>
+                        </div>
+                        <div class="dropdown-menu" id="weixin-dropdown" role="menu">
+                            <div class="dropdown-content">
+                            </div>
+                        </div>
+                    </div>
+                
+                    {{!-- 作者的微博 --}}
+                    <a href="#" id="weibo">
+                        <span class="icon has-text-danger is-large">
+                            <i class="fab fa-weibo fa-lg"></i>
+                        </span>
+                    </a>
                 </div>
-                {{#if website}}
-                    <a class="social-link social-link-wb" href="{{website}}" target="_blank" rel="noopener">{{> "icons/website"}}</a>
-                {{/if}}
-                {{#if twitter}}
-                    <a class="social-link social-link-tw" href="{{twitter_url}}" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-                {{#if facebook}}
-                    <a class="social-link social-link-fb" href="{{facebook_url}}" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+            </div>
+            {{/author}}
+
+            <div class="post-feed">
+                {{#foreach posts}}
+                    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                    {{> "post-card"}}
+                {{/foreach}}
             </div>
         </div>
     </div>
-</header>
-{{/author}}
-
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-
-        <div class="post-feed">
-            {{#foreach posts}}
-
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-
-            {{/foreach}}
-        </div>
-
-    </div>
-</main>
+</div>
