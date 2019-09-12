@@ -49,12 +49,12 @@
                             </span>
                             <span>{{reading_time}}</span>
                             {{!-- 标签 --}}
-                            {{#if primary_tag}}
-                                <span class="icon">
-                                    <i class="fas fa-tags"></i>
-                                </span>
-                                <span class="post-card-tags">{{primary_tag.name}}</span>
-                            {{/if}}
+                            {{#primary_tag}}
+                            <span class="icon">
+                                <i class="fas fa-tags"></i>
+                            </span>
+                            <a href="{{url}}"><span class="post-card-tags">{{name}}</span></a>
+                            {{/primary_tag}}
                         </section>
                     </header>
 

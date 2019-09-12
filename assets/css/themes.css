@@ -88,8 +88,12 @@ body {
 
 /* 文章页面 */
 .post {
-    padding: 72px 48px 24px 48px;
+    padding: 72px 0 24px 0;
     background: white;
+}
+
+.post .post-full-content {
+    padding: 0 48px;;
 }
 
 .post .title {
@@ -108,6 +112,11 @@ body {
 
 .post .post-full .post-full-footer {
     margin: 48px 0;
+    padding: 0 48px;;
+}
+
+.post .post-full .post-card-tags {
+    color: #a1a1a1;
 }
 
 .author-card .author-card-content {
