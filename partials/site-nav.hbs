@@ -14,15 +14,18 @@
 
     {{!-- 用户信息 --}}
     <div class="site-user has-text-centered">
+    {{#primary_author}}
         <figure class="image is-128x128 is-inline-block">
-              <img  src="https://bulma.io/images/placeholders/128x128.png">
+              <img  src="{{#if profile_image}}{{img_url profile_image size="xs"}}{{else}}https://bulma.io/images/placeholders/128x128.png{{/if}}" 
+                alt="{{name}}">
         </figure>
         <div class="author-name">
-            <span>cmlanche</span>
+            <span>{{name}}</span>
         </div>
         <div class="author-bio">
-            <span>中的“可视对比工具”和“合并工具”中选择Beyond Compare，但是退出却警告找不到bcomp的命令，而几个命令输入框也是disable的，安装了Beyond Compare之后还是找不到bcomp，在这个应用下找到了这个可执行文件，配置环境变量也总是未能成功。</span>
+            <span>{{bio}}</span>
         </div>
+    {{/primary_author}}
     </div>
 
     {{!-- 工具栏 --}}
