@@ -1,6 +1,27 @@
 <article class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#is "home"}}{{#has index="nth:6"}}post-card-large{{/has}}{{/is}}{{/unless}}">
 
+    <header class="post-card-header has-text-centered">
+        <a class="title" href="{{url}}">
+            <h2 class="post-card-title">{{title}}</h2>
+        </a>
+        
+        <p class="post-meta">
+            <span class="icon">
+              <i class="far fa-clock"></i>
+            </span>
+            <span>{{reading_time}}</span>
+            {{#if primary_tag}}
+                <span class="icon">
+                    <i class="fas fa-tags"></i>
+                </span>
+                <span class="post-card-tags">{{primary_tag.name}}</span>
+            {{/if}}
+        </p>
+    </header>
+
+
     {{#if feature_image}}
+    <div class="has-text-centered">
     <a class="post-card-image-link" href="{{url}}">
         {{!-- This is a responsive image, it loads different sizes depending on device
         https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
@@ -14,49 +35,19 @@
             alt="{{title}}"
         />
     </a>
+    </div>
+   
     {{/if}}
 
     <div class="post-card-content">
 
-        <a class="post-card-content-link" href="{{url}}">
+        <section class="post-card-excerpt">
+            <p>{{excerpt words="33"}}</p>
+        </section>
 
-            <header class="post-card-header">
-                {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
-                {{/if}}
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-            {{#foreach authors}}
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        {{name}}
-                    </div>
-
-                    {{#if profile_image}}
-                        <a href="{{url}}" class="static-avatar">
-                            <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                        </a>
-                    {{else}}
-                        <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                    {{/if}}
-                </li>
-            {{/foreach}}
-            </ul>
-
-            <span class="reading-time">{{reading_time}}</span>
-
-        </footer>
+        <div class="has-text-centered">
+            <a class="button is-outlined" href="{{url}}">阅读全文</a>
+        </div>
 
     </div>{{!--/.post-card-content--}}
 

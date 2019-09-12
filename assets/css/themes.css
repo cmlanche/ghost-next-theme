@@ -2,6 +2,7 @@ body {
     background: #f5f7f9;
 }
 
+/* 左侧导航栏 */
 .site-nav {
 }
 
@@ -40,4 +41,44 @@ body {
     font-size: 13px;
     font-weight: normal;
     color: #555555;
+}
+
+
+/* 主页右侧文章列表 */
+.post-list {
+    background: white;
+}
+
+.post-card {
+    padding: 72px 48px;
+}
+
+.post-card .post-meta {
+    margin-top: 12px;
+    margin-bottom: 30px;
+}
+
+.post-card .post-meta .icon{
+    margin-left: 8px;
+}
+
+.post-card .post-card-header .post-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.post-card .author-list {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.post-card .post-card-content .post-card-excerpt {
+    font-size: 14px;
+    line-height: 2;
+    color: #555555;
+}
+
+.post-card .post-card-content .button {
+    margin-top: 48px;
 }
