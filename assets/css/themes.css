@@ -77,9 +77,10 @@ body {
 }
 
 .post-card .post-card-content .post-card-excerpt {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 2;
     color: #555555;
+    margin: 4px 48px;
 }
 
 .post-card .post-card-content .button {
