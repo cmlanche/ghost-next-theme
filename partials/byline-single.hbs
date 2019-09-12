@@ -2,22 +2,33 @@
 {{#primary_author}}
 
 <section class="author-card">
-    {{#if profile_image}}
-        <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-    {{else}}
-        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
-    {{/if}}
-    <section class="author-card-content">
-        <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
-        {{#if bio}}
-            <p>{{bio}}</p>
-        {{else}}
-            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-        {{/if}}
-    </section>
+    <div class="level">
+        <div class="level-left">
+            {{#if profile_image}}
+            <figure class="image is-48x48 is-inline-block">
+                <img class="is-rounded author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+            </figure>
+            {{else}}
+                <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+            {{/if}}
+            <section class="author-card-content is-inline-block">
+                <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>
+                {{#if bio}}
+                    <p>{{bio}}</p>
+                {{else}}
+                    <p>阅读<a href="{{url}}">更多关于本作者的文章</a></p>
+                {{/if}}
+            </section>
+        </div>
+
+        <div class="level-right">
+            <div class="post-full-footer-right">
+                <a class="button is-primary is-outlined author-card-button" href="{{url}}">阅读更多</a>
+            </div>
+        </div>
+    </div>
+    
 </section>
-<div class="post-full-footer-right">
-    <a class="author-card-button" href="{{url}}">Read More</a>
-</div>
+
 
 {{/primary_author}}
