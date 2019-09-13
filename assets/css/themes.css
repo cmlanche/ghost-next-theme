@@ -142,3 +142,14 @@ body {
     color: #999999;
     font-size: 13px;
 }
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .sticky-wrapper {
+        display: none;
+    }
+
+    .post .post-full-content {
+        padding: 0 8px;;
+    }
+}

@@ -12,6 +12,7 @@
         </aside>
     </div>
 
+    <div class="sticky-wrapper">
     <div id="sticky-part">
         {{#is "index, tag, author"}}
         <div class="site-user has-text-centered">
@@ -124,6 +125,8 @@
             {{/is}}
         </div>
     </div>
+    </div>
+
 </div>
 
 {{#contentFor "scripts"}}
@@ -137,8 +140,8 @@ $(document).ready(function () {
 
     $("#sticky-part").sticky({topSpacing:0})
 
-    var weixin = document.querySelector("#weixin-dropdown .dropdown-content");
-    weixin.innerHTML = "<figure class='image'><image src=" + theme.cmlanche.weixin + "></figure>";
+    var weixin = $("#weixin-dropdown .dropdown-content");
+    weixin.html("<figure class='image'><image src=" + theme.cmlanche.weixin + "></figure>");
 
     var weibo = $("#weibo");
     weibo.attr("href", theme.cmlanche.weibo);
