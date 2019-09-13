@@ -47,7 +47,13 @@
 
         {{!-- 工具栏 --}}
         <div class="site-tools has-text-centered">
-            {{#is "index"}}
+            {{#is "index, tag, author"}}
+                <a href="/rss">
+                    <span class="icon is-large">
+                        <i class="fas fa-rss"></i>
+                    </span> 
+                </a>
+
                 {{#if @site.twitter}}
                     <a href="{{@site.twitter}}">
                         <span class="icon has-text-info is-large">
@@ -57,9 +63,11 @@
                 {{/if}}
 
                 {{#if @site.facebook}}
-                    <span class="icon has-text-link is-large">
-                        <i class="fab fa-facebook fa-lg"></i>
-                    </span>
+                    <a href="{{@site.facebook}}">
+                        <span class="icon has-text-link is-large">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </span>
+                    </a>
                 {{/if}}
             {{/is}}
 
