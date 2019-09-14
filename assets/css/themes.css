@@ -7,6 +7,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: "liga" on;
     -webkit-overflow-scrolling: touch;
+    min-height: 100vh;
+}
+
+hr {
+    margin: 0;
 }
 
 .container {
@@ -146,6 +151,10 @@ body {
 
 .author-card .author-card-content {
     margin-left: 16px;
+}
+
+.pagination-wrapper {
+    padding: 2rem;
 }
 
 /* 标签页 */

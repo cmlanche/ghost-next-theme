@@ -1,0 +1,7 @@
+<nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+  <a class="pagination-previous" href="{{page_url prev}}" {{#unless prev}}disabled{{/unless}}>上一页</a>
+  <a class="pagination-next" href="{{page_url next}}" {{#unless next}}disabled{{/unless}}>下一页</a>
+  <ul class="pagination-list">
+    <li><a class="pagination-link is-current" aria-label="Goto page 1" aria-current="page">{{page}}</a></li>
+  </ul>
+</nav>
