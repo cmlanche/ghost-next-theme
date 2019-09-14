@@ -1,7 +1,12 @@
 <ul class="menu-list">
     {{#foreach navigation}}
         <li class="nav-{{slug}}">
-            <a href="{{url absolute="true"}}" class="{{#if current}} is-active{{/if}}">{{label}}</a>
+            <a href="{{url absolute="true"}}" class="{{#if current}} is-active{{/if}}">
+                <span class="icon">
+                    <i class="fas {{#if @first}}fa-home{{else}}fa-dot-circle{{/if}}"></i>
+                </span>
+                <span>{{label}}</span>
+            </a>
         </li>
     {{/foreach}}
 </ul>
