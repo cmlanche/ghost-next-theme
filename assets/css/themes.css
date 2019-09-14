@@ -64,6 +64,11 @@ body {
     margin-left: 8px;
 }
 
+.post-card .post-card-header {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
 .post-card .post-card-header .post-card-title {
     font-size: 24px;
     font-weight: bold;
@@ -91,6 +96,10 @@ body {
 .post {
     padding: 72px 0 24px 0;
     background: white;
+}
+
+.post .post-full-header {
+    padding: 0 48px;
 }
 
 .post .post-full-content {
@@ -147,6 +156,10 @@ body {
 @media (max-width: 768px) {
     .sticky-wrapper {
         display: none;
+    }
+
+    .post .post-full-header {
+        padding: 0 8px;;
     }
 
     .post .post-full-content {
