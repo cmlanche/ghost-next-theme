@@ -1,5 +1,5 @@
 {
-    "name": "ghost-theme-next",
+    "name": "ghost-next-theme",
     "description": "The default personal blogging theme for Ghost. Beautiful, minimal and responsive.",
     "demo": "https://cmlanche.com",
     "version": "0.1",
@@ -61,6 +61,6 @@
         "pump": "3.0.0"
     },
     "config": {
-        "posts_per_page": 10
+        "posts_per_page": 2
     }
 }

@@ -85,6 +85,9 @@
                     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                     {{> "post-card"}}
                 {{/foreach}}
+                <div class="pagination-wrapper">
+                {{pagination}}
+                </div>
             </div>
 
             {{> footer}}
