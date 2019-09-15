@@ -91,7 +91,7 @@ git clone https://github.com/cmlanche/ghost-next-theme.git
 
 ##### 激活主题
 
-在你的本地ghost后台（http://localhost:2368/ghost）中的【Design】可以看到ghost-next-theme主题，激活active即可。
+在你的本地ghost后台（[http://localhost:2368/ghost](http://localhost:2368/ghost)）中的【Design】可以看到ghost-next-theme主题，激活active即可。
 
 ##### 本地开发
 
@@ -104,4 +104,3 @@ yarn dev
 ```
 
 更多开发流程，直接参考[Casper](https://github.com/TryGhost/Casper)即可。
-
