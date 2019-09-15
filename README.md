@@ -26,6 +26,10 @@
 
 ![WX20190915-134534@2x_meitu_5](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/rlbab.jpg)
 
+##### 移动端自适应
+
+![WX20190915-140405@2x_meitu_8](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/cc7v1.jpg)
+
 ### 如何使用
 
 ##### 下载主题
@@ -40,7 +44,7 @@ ghost主题使用很简单，不需要编译啥的，直接下载源码zip包上
 
 ##### 设置（可选）
 
-1. 设置微信、微博相关信息
+1. **设置微信、微博相关信息**
 
 如果你想让你的微信和微博生效，那么在ghost后台的【Code injection】-【Site Header】中添加如下代码：
 
@@ -57,8 +61,47 @@ this.theme = {
 
 > todo：其中cmlanche暂时写死的，你不用改成你的用户名，之后更新版本会修改这一点，因为一个ghost博客是支持多用户的，不同的用户可以配置不同的微信微博信息。
 
-2. 设置个人相关信息
+2. **设置个人相关信息**
 
 找到【Staff】，在列表中找到你的用户，编辑即可。
 
 ![WX20190915-135855@2x_meitu_7](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/lxq1r.jpg)
+
+3. **站点设置**
+
+【General】中有关于站点相关的设置，【Title & description】以及【Public logo】的设置如下图，【Public icon】也可以正常设置。
+
+![WX20190915-140846@2x_meitu_9](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/vnqwe.jpg)
+
+![image-20190915141037910](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/c3fjt.png)
+
+### 参与开发
+
+##### 安装ghost环境
+
+请到官方地址学习：[local install](https://ghost.org/docs/install/local/)
+
+##### 克隆代码
+
+切换到你的themes目录：`<你的ghost安装路径>/content/themes`，克隆代码
+
+```shell
+git clone https://github.com/cmlanche/ghost-next-theme.git
+```
+
+##### 激活主题
+
+在你的本地ghost后台（http://localhost:2368/ghost）中的【Design】可以看到ghost-next-theme主题，激活active即可。
+
+##### 本地开发
+
+本主题使用的构建技术是跟官方Casper一样的，都是基于gulp、yarn，前端css框架用的是[bulma](https://bulma.io/)，模板语言采用了handerbar，我最常用的官方文档是：https://ghost.org/docs/api/v2/handlebars-themes/
+
+本地代码有修改，可以用如下命令监控，就可以自主编译，写完代码，就可以直接在浏览器上预览效果（手动刷新哦）
+
+```
+yarn dev
+```
+
+更多开发流程，直接参考[Casper](https://github.com/TryGhost/Casper)即可。
+
