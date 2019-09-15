@@ -36,7 +36,7 @@ ghost主题使用很简单，不需要编译啥的，直接下载源码zip包上
 
 打开你的ghost网站的后台，找到【Design】-【Upload a theme】，如下图，然后上传下载的zip主题包，然后点击Active激活。
 
-![WX20190915-135029@2x_meitu_6](/Users/chengming/Downloads/WX20190915-135029@2x_meitu_6.jpg)
+![WX20190915-135029@2x_meitu_6](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/fx6lz.jpg)
 
 ##### 设置（可选）
 
