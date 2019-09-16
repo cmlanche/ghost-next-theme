@@ -44,7 +44,7 @@ hr {
     background: white;
 }
 
-.site-nav .site-user {
+.site-nav .site-user, .site-logo {
     background: white;
     margin: 16px 0;
     padding: 32px 16px;
@@ -61,6 +61,11 @@ hr {
     font-size: 13px;
     font-weight: normal;
     color: #555555;
+}
+
+.site-nav .site-logo .image {
+    max-width: 128px;
+    height: auto;
 }
 
 

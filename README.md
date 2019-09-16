@@ -51,15 +51,13 @@ ghost主题使用很简单，不需要编译啥的，直接下载源码zip包上
 ```javascript
 <script>
 this.theme = {
-	"cmlanche": {
+	"author": {
 		"weixin": "https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/weh85.png",
 		"weibo": "https://www.weibo.com/574811002"
 	}
 }
 </script>
 ```
-
-> todo：其中cmlanche暂时写死的，你不用改成你的用户名，之后更新版本会修改这一点，因为一个ghost博客是支持多用户的，不同的用户可以配置不同的微信微博信息。
 
 2. **设置个人相关信息**
 

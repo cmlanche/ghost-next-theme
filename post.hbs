@@ -59,15 +59,14 @@
                     </header>
 
                     {{#if feature_image}}
-                    <figure class="post-full-image">
+                    <figure class="kg-image-card post-full-image">
                         {{!-- This is a responsive image, it loads different sizes depending on device
                         https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-                        <img srcset="{{img_url feature_image size="m"}} 769w,
+                        <img class="kg-image" srcset="{{img_url feature_image size="m"}} 769w,
                                     {{img_url feature_image size="l"}} 1024w,
                                     {{img_url feature_image size="xl"}} 1408w"
                             src="{{img_url feature_image size="xl"}}"
-                            alt="{{title}}"
-                        />
+                            alt="{{title}}"/>
                     </figure>
                     {{/if}}
 

@@ -15,7 +15,7 @@
     <div class="sticky-wrapper">
     <div id="sticky-part">
         {{#is "index, tag, author"}}
-        <div class="site-user has-text-centered">
+        <div class="site-logo has-text-centered">
             {{#if @site.logo}}
             <figure class="image is-128x128 is-inline-block">
                 <img  src="{{@site.logo}}" 
@@ -102,25 +102,10 @@
                     {{/if}}
                 
                     {{!-- 作者的微信 --}}
-                    <div class="dropdown is-hoverable is-up">
-                        <div class="dropdown-trigger">
-                            <span class="icon has-text-success is-large" 
-                                aria-haspopup="true" aria-controls="weixin-dropdown">
-                                <i class="fab fa-weixin fa-lg"></i>
-                            </span>
-                        </div>
-                        <div class="dropdown-menu" id="weixin-dropdown" role="menu">
-                            <div class="dropdown-content">
-                            </div>
-                        </div>
-                    </div>
+                    
                 
                     {{!-- 作者的微博 --}}
-                    <a href="#" id="weibo">
-                        <span class="icon has-text-danger is-large">
-                            <i class="fab fa-weibo fa-lg"></i>
-                        </span>
-                    </a>
+                    
                 {{/primary_author}}
             {{/is}}
         </div>
@@ -132,20 +117,35 @@
 {{#contentFor "scripts"}}
 <script>
 
-// NOTE: Scroll performance is poor in Safari
-// - this appears to be due to the events firing much more slowly in Safari.
-//   Dropping the scroll event and using only a raf loop results in smoother
-//   scrolling but continuous processing even when not scrolling
 $(document).ready(function () {
 
     $("#sticky-part").sticky({topSpacing:0})
 
-    var weixin = $("#weixin-dropdown .dropdown-content");
-    weixin.html("<figure class='image'><image src=" + theme.cmlanche.weixin + "></figure>");
+    // 微信设置
+    if(theme && theme.author && theme.author.weixin) {
+        $(".site-tools").append('<div class="dropdown is-hoverable is-up"> \
+                        <div class="dropdown-trigger"> \
+                            <span class="icon has-text-success is-large" \
+                                aria-haspopup="true" aria-controls="weixin-dropdown"> \
+                                <i class="fab fa-weixin fa-lg"></i> \
+                            </span> \
+                        </div> \
+                        <div class="dropdown-menu" id="weixin-dropdown" role="menu"> \
+                            <div class="dropdown-content"> \
+                                <figure class="image"><image src=' + theme.author.weixin + '></figure>" \
+                            </div> \
+                        </div> \
+                    </div>');
+    }
 
-    var weibo = $("#weibo");
-    weibo.attr("href", theme.cmlanche.weibo);
-
+    // 微博设置
+    if(theme && theme.author && theme.author.weibo) {
+        $(".site-tools").append('<a href="' + theme.author.weibo + '"> \
+                        <span class="icon has-text-danger is-large"> \
+                            <i class="fab fa-weibo fa-lg"></i> \
+                        </span> \
+                    </a>')
+    }
 });
 </script>
 {{/contentFor}}
