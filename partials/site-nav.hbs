@@ -47,7 +47,7 @@
         
 
         {{!-- 工具栏 --}}
-        <div class="site-tools has-text-centered">
+        <div class="site-tools icon-bar has-text-centered">
             {{#is "index, tag, author"}}
                 <a href="/rss">
                     <span class="icon is-large">
@@ -101,11 +101,6 @@
                         </a>
                     {{/if}}
                 
-                    {{!-- 作者的微信 --}}
-                    
-                
-                    {{!-- 作者的微博 --}}
-                    
                 {{/primary_author}}
             {{/is}}
         </div>
@@ -121,9 +116,10 @@ $(document).ready(function () {
 
     $("#sticky-part").sticky({topSpacing:0})
 
+    {{#is "post, page, author"}}
     // 微信设置
     if(theme && theme.author && theme.author.weixin) {
-        $(".site-tools").append('<div class="dropdown is-hoverable is-up"> \
+        $(".icon-bar").append('<div class="dropdown is-hoverable is-up"> \
                         <div class="dropdown-trigger"> \
                             <span class="icon has-text-success is-large" \
                                 aria-haspopup="true" aria-controls="weixin-dropdown"> \
@@ -136,16 +132,18 @@ $(document).ready(function () {
                             </div> \
                         </div> \
                     </div>');
+        
     }
 
     // 微博设置
     if(theme && theme.author && theme.author.weibo) {
-        $(".site-tools").append('<a href="' + theme.author.weibo + '"> \
+        $(".icon-bar").append('<a href="' + theme.author.weibo + '"> \
                         <span class="icon has-text-danger is-large"> \
                             <i class="fab fa-weibo fa-lg"></i> \
                         </span> \
                     </a>')
     }
+    {{/is}}
 });
 </script>
 {{/contentFor}}

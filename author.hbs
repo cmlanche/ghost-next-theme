@@ -21,7 +21,7 @@
                 {{#if bio}}
                     <h2 class="author-bio">{{bio}}</h2>
                 {{/if}}
-                <div class="author-meta">
+                <div class="author-meta icon-bar">
                     {{#if location}}
                         <div class="author-location">{{location}} <span class="bull">&bull;</span></div>
                     {{/if}}
@@ -55,27 +55,6 @@
                             </span>
                         </a>
                     {{/if}}
-                
-                    {{!-- 作者的微信 --}}
-                    <div class="dropdown is-hoverable is-up">
-                        <div class="dropdown-trigger">
-                            <span class="icon has-text-success is-large" 
-                                aria-haspopup="true" aria-controls="weixin-dropdown">
-                                <i class="fab fa-weixin fa-lg"></i>
-                            </span>
-                        </div>
-                        <div class="dropdown-menu" id="weixin-dropdown" role="menu">
-                            <div class="dropdown-content">
-                            </div>
-                        </div>
-                    </div>
-                
-                    {{!-- 作者的微博 --}}
-                    <a href="#" id="weibo">
-                        <span class="icon has-text-danger is-large">
-                            <i class="fab fa-weibo fa-lg"></i>
-                        </span>
-                    </a>
                 </div>
             </div>
             {{/author}}
