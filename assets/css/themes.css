@@ -154,6 +154,11 @@ hr {
     color: #a1a1a1;
 }
 
+a.edit-post {
+    margin: 16px;
+    color: #222222;
+}
+
 .author-card .author-card-content {
     margin-left: 16px;
 }
