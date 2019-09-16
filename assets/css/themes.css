@@ -190,6 +190,13 @@ a.edit-post {
     background: white;
 }
 
+/* 错误页 */
+.error-message {
+    background: white;
+    height: 100vh;
+    padding: 20% 0;
+}
+
 /* 移动端适配 */
 @media (max-width: 768px) {
     .post-card{

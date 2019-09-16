@@ -3,34 +3,14 @@
 <div class="site-wrapper container">
 
     <div class="columns">
-        {{!-- 左侧导航栏 --}}
-        <div class="column is-one-quarter">
-            {{> "site-nav"}}
-        </div>
-
         <div class="column">
-            <main id="site-main" class="site-main outer">
-                <div class="inner">
+            <section class="error-message has-text-centered">
+                <h1 class="title error-code">{{code}}</h1>
+                <p class="subtitle error-description">{{message}}</p>
+                <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
 
-                    <section class="error-message">
-                        <h1 class="error-code">{{code}}</h1>
-                        <p class="error-description">{{message}}</p>
-                        <a class="error-link" href="{{@site.url}}">Go to the front page →</a>
-                    </section>
-                </div>
-            </main>
-
-            {{#get "posts" limit="3"}}
-            <aside class="outer">
-                <div class="inner">
-                    <div class="post-feed">
-                        {{#foreach posts}}
-                            {{> "post-card"}}
-                        {{/foreach}}
-                    </div>
-                </div>
-            </aside>
-            {{/get}}
+                {{>footer}}
+            </section>
         </div>
     </div>
 
