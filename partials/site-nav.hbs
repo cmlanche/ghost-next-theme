@@ -14,21 +14,8 @@
 
     <div class="sticky-wrapper">
     <div id="sticky-part">
-        {{#is "index, tag, author"}}
-        <div class="site-logo has-text-centered">
-            {{#if @site.logo}}
-            <figure class="image is-128x128 is-inline-block">
-                <img  src="{{@site.logo}}" 
-                    alt="{{@site.title}}">
-            </figure>
-            {{else}}
-            <span>请在<a href="/ghost">后台</a>设置网站logo</span>
-            {{/if}}
-        </div>
-        {{/is}}
-
-        {{!-- 用户信息 --}}
         {{#is "post, page"}}
+        {{!-- 用户信息 --}}
         {{#primary_author}}
         <div class="site-user has-text-centered">
             <figure class="image is-128x128 is-inline-block">
@@ -43,65 +30,75 @@
             </div>
         </div>
         {{/primary_author}}
+        {{else}}
+        {{!-- 站点信息 --}}
+        <div class="site-logo has-text-centered">
+            {{#if @site.logo}}
+            <figure class="image is-128x128 is-inline-block">
+                <img  src="{{@site.logo}}" 
+                    alt="{{@site.title}}">
+            </figure>
+            {{else}}
+            <span>请在<a href="/ghost">后台</a>设置网站logo</span>
+            {{/if}}
+        </div>
         {{/is}}
         
 
         {{!-- 工具栏 --}}
-        <div class="site-tools icon-bar has-text-centered">
-            {{#is "index, tag, author"}}
-                <a href="/rss">
-                    <span class="icon is-large">
-                        <i class="fas fa-rss"></i>
-                    </span> 
-                </a>
+        <div class="site-tools {{#is 'author'}}{{else}}icon-bar{{/is}} has-text-centered">
+            {{#is "post, page"}}
+            {{#primary_author}}
+                {{!-- 作者个人网站 --}}
+                {{#if website}}
+                    <a href="{{website}}">
+                        <span class="icon is-large">
+                            <i class="fas fa-blog fa-lg"></i>
+                        </span>
+                    </a>
+                {{/if}}
 
-                {{#if @site.twitter}}
-                    <a href="{{@site.twitter}}">
+                {{!-- 作者的推特 --}}
+                {{#if twitter}}
+                    <a href="{{twitter}}">
                         <span class="icon has-text-info is-large">
                             <i class="fab fa-twitter fa-lg"></i>
                         </span> 
                     </a>
                 {{/if}}
 
-                {{#if @site.facebook}}
-                    <a href="{{@site.facebook}}">
+                {{!-- 作者的Facebook --}}
+                {{#if facebook}}
+                    <a href="{{facebook}}">
                         <span class="icon has-text-link is-large">
                             <i class="fab fa-facebook fa-lg"></i>
                         </span>
                     </a>
                 {{/if}}
-            {{/is}}
+            
+            {{/primary_author}}
+            {{else}}
+            <a href="/rss">
+                <span class="icon is-large">
+                    <i class="fas fa-rss"></i>
+                </span> 
+            </a>
 
-            {{#is "post, page"}}
-                {{#primary_author}}
-                    {{!-- 作者个人网站 --}}
-                    {{#if website}}
-                        <a href="{{website}}">
-                            <span class="icon is-large">
-                                <i class="fas fa-blog fa-lg"></i>
-                            </span>
-                        </a>
-                    {{/if}}
+            {{#if @site.twitter}}
+                <a href="{{@site.twitter}}">
+                    <span class="icon has-text-info is-large">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </span> 
+                </a>
+            {{/if}}
 
-                    {{!-- 作者的推特 --}}
-                    {{#if twitter}}
-                        <a href="{{twitter}}">
-                            <span class="icon has-text-info is-large">
-                                <i class="fab fa-twitter fa-lg"></i>
-                            </span> 
-                        </a>
-                    {{/if}}
-
-                    {{!-- 作者的Facebook --}}
-                    {{#if facebook}}
-                        <a href="{{facebook}}">
-                            <span class="icon has-text-link is-large">
-                                <i class="fab fa-facebook fa-lg"></i>
-                            </span>
-                        </a>
-                    {{/if}}
-                
-                {{/primary_author}}
+            {{#if @site.facebook}}
+                <a href="{{@site.facebook}}">
+                    <span class="icon has-text-link is-large">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </span>
+                </a>
+            {{/if}}
             {{/is}}
         </div>
     </div>
