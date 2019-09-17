@@ -26,6 +26,12 @@ hr {
 .site-nav {
 }
 
+.site-nav .navigation {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .site-nav .site-title {
     text-align: center;
     background: #222222;
