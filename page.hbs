@@ -1,0 +1,136 @@
+{{!< default}}
+
+{{#contentFor "styles"}}
+<link rel="stylesheet" type="text/css" href="{{asset "built/github.markdown.css"}}"/>
+<style>
+    .markdown-body {
+		box-sizing: border-box;
+		min-width: 200px;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 767px) {
+		.markdown-body {
+			padding: 15px 0;
+		}
+	}
+</style>
+{{/contentFor}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+{{!-- The main content area --}}
+<main id="site-main" class="container">
+
+    <div class="columns">
+        {{!-- 左侧导航栏 --}}
+        <div class="column is-one-quarter">
+            {{> "site-nav"}}
+        </div>
+
+        {{!-- 右侧主题栏 --}}
+        <div class="column">
+            <a href="/ghost/#/editor/post/{{id}}" class="edit-post is-pulled-right">
+                <span class="icon">
+                    <i class="fas fa-user-edit"></i>
+                </span>
+            </a>
+            <div class="{{post_class}}">
+                <article class="post-full {{#unless feature_image}}no-image{{/unless}}">
+
+                    <header class="post-full-header has-text-centered">
+                        <h1 class="title">{{title}}</h1>
+                        <section class="post-meta">
+                            {{!-- 写作时间 --}}
+                            <span class="icon">
+                            <i class="fas fa-calendar-day"></i>
+                            </span>
+                            <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY年MM月D日 "}}</time>
+                            {{!-- 阅读需要的时间 --}}
+                            <span class="icon">
+                            <i class="far fa-clock"></i>
+                            </span>
+                            <span>{{reading_time}}</span>
+                            {{!-- 标签 --}}
+                            {{#primary_tag}}
+                            <span class="icon">
+                                <i class="fas fa-tags"></i>
+                            </span>
+                            <a href="{{url}}"><span class="post-card-tags">{{name}}</span></a>
+                            {{/primary_tag}}
+                        </section>
+                    </header>
+
+                    {{#if feature_image}}
+                    <figure class="kg-image-card post-full-image">
+                        {{!-- This is a responsive image, it loads different sizes depending on device
+                        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                        <img class="kg-image" srcset="{{img_url feature_image size="m"}} 769w,
+                                    {{img_url feature_image size="l"}} 1024w,
+                                    {{img_url feature_image size="xl"}} 1408w"
+                            src="{{img_url feature_image size="xl"}}"
+                            alt="{{title}}"/>
+                    </figure>
+                    {{/if}}
+
+                    <section class="post-full-content">
+                        <div class="post-content markdown-body">
+                            {{content}}
+                        </div>
+                    </section>
+
+                    {{!-- Email subscribe form at the bottom of the page --}}
+                    {{#if @labs.subscribers}}
+                    <section class="subscribe-form">
+                        <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
+                        <p>Get the latest posts delivered right to your inbox</p>
+                        {{subscribe_form placeholder="youremail@example.com"}}
+                    </section>
+                    {{/if}}
+
+                    <footer class="post-full-footer">
+
+                        {{!-- There are two options for how we display the byline/author-info.
+                        If the post has more than one author, we load a specific template
+                        from includes/byline-multiple.hbs, otherwise, we just use the
+                        default byline. --}}
+
+                        {{#has author="count:>1"}}
+                            {{> "byline-multiple"}}
+                        {{else}}
+                            {{> "byline-single"}}
+                        {{/has}}
+
+                    </footer>
+
+                    {{!--
+                    <section class="post-full-comments">
+                        If you want to embed comments, this is a good place to do it!
+                    </section>
+                    --}}
+
+                </article>
+            </div>
+
+            {{> footer}}
+        </div>
+    </div>
+    
+</main>
+
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+});
+</script>
+{{/contentFor}}
