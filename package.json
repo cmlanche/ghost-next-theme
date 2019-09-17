@@ -61,6 +61,6 @@
         "pump": "3.0.0"
     },
     "config": {
-        "posts_per_page": 2
+        "posts_per_page": 10
     }
 }
