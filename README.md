@@ -73,6 +73,11 @@ this.theme = {
 
 ![image-20190915141037910](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/c3fjt.png)
 
+### TODO
+
+1. 标签页
+2. 支持Bookmark card，这样在友链页面可以让链接更美观
+
 ### 参与开发
 
 ##### 安装ghost环境
