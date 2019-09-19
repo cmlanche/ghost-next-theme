@@ -73,12 +73,8 @@ this.theme = {
 
 ![image-20190915141037910](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/c3fjt.png)
 
-### TODO
-
-1. 标签页
-2. 支持Bookmark card，这样在友链页面可以让链接更美观
-3. 邮件订阅功能
-4. 搜索
+### 开发计划
+[roadmap](https://github.com/cmlanche/ghost-next-theme/projects/1)
 
 ### 参与开发
 
