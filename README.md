@@ -6,25 +6,11 @@
 
 ##### 首页
 
-![screenshot-desktop_meitu_1](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/x4xwm.jpg)
+![homepage (https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/8r6l3.jpg)](/Users/chengming/Downloads/homepage (1).jpg)
 
-##### 作者页面
+##### 友链
 
-![WX20190915-133947@2x_meitu_2](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/je9br.jpg)
-
-##### 标签页
-
-![WX20190915-134119@2x_meitu_3](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/cish9.jpg)
-
-##### 文章页
-
-左侧是作者的基本信息，包含一个头像、标题还有个人描述，还有3个链接，分别是个人网站链接、微信和微博主页。
-
-![WX20190915-134249@2x_meitu_4](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/36r5i.jpg)
-
-​	微信是鼠标放在logo上就回出现微信二维码，可以让别人扫码添加好友。
-
-![WX20190915-134534@2x_meitu_5](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/rlbab.jpg)
+![youlianpage (https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/u0704.jpg)](/Users/chengming/Downloads/youlianpage (1).jpg)
 
 ##### 移动端自适应
 
