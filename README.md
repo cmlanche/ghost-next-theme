@@ -6,11 +6,11 @@
 
 ##### 首页
 
-![homepage (https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/8r6l3.jpg)](/Users/chengming/Downloads/homepage (1).jpg)
+![homepage](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/8r6l3.jpg)
 
 ##### 友链
 
-![youlianpage (https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/u0704.jpg)](/Users/chengming/Downloads/youlianpage (1).jpg)
+![youlianpage](https://indiehackers-1251406926.cos.ap-chengdu.myqcloud.com/hackers/u0704.jpg)
 
 ##### 移动端自适应
 
